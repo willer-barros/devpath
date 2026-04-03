@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Sora:wght@300;400;500;600&display=swap');
+
+:root {
+  --accent-green: #00D084;
+  --accent-purple: #6C63FF;
+  --accent-orange: #FF6B35;
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9f8;
+  --card-bg: #ffffff;
+
+  --text-primary: #1a1a1a;
+  --text-muted: #888;
+
+  --border: rgba(0, 0, 0, 0.1);
+
+  --font-sans: 'Sora', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #111110;
+    --bg-secondary: #161615;
+    --card-bg: #1a1a19;
+
+    --text-primary: #e8e8e4;
+    --text-muted: #6b6b65;
+
+    --border: rgba(255, 255, 255, 0.08);
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
