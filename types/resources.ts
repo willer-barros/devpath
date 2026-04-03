@@ -1,4 +1,4 @@
-import { Resource, TrackMeta } from '@/types';
+import { Resource, TrackMeta } from '../types';
 
 export const resources: Resource[] = [
   {
@@ -100,10 +100,10 @@ export const resources: Resource[] = [
   {
     id: 9,
     track: 'backend',
-    source: 'Rocketseat',
-    title: 'NLW — Next Level Week',
-    desc: 'Eventos gratuitos intensivos com Node.js, criando projetos completos em 5 dias.',
-    link: 'https://rocketseat.com.br',
+    source: 'Cursa',
+    title: 'Introdução ao Node.js',
+    desc: 'Curso de Node para Iniciantes da Cursa com Certificado ao final do curso.',
+    link: 'https://cursa.com.br/home/course/curso-de-node-js-gr%C3%A1tis/91',
     badge: 'free',
     badgeLabel: 'Grátis',
     level: 2,
@@ -111,6 +111,18 @@ export const resources: Resource[] = [
   },
   {
     id: 10,
+    track: 'backend',
+    source: 'W3Schools',
+    title: 'Plataforma Multidisciplinar',
+    desc: 'Vários cursos de diversas linguagens e conhecimentos.',
+    link: 'https://www.w3schools.com/',
+    badge: 'free',
+    badgeLabel: 'Grátis',
+    level: 2,
+    lang: 'en',
+  },
+  {
+    id: 11,
     track: 'backend',
     source: 'PostgreSQL Docs',
     title: 'PostgreSQL Tutorial',
@@ -122,7 +134,7 @@ export const resources: Resource[] = [
     lang: 'en',
   },
   {
-    id: 11,
+    id: 12,
     track: 'backend',
     source: 'FullStackOpen',
     title: 'Full Stack Open — University of Helsinki',
@@ -134,7 +146,7 @@ export const resources: Resource[] = [
     lang: 'pt',
   },
   {
-    id: 12,
+    id: 13,
     track: 'ferramentas',
     source: 'Git SCM',
     title: 'Pro Git Book',
@@ -146,7 +158,7 @@ export const resources: Resource[] = [
     lang: 'pt',
   },
   {
-    id: 13,
+    id: 14,
     track: 'ferramentas',
     source: 'GitHub',
     title: 'GitHub Skills',
@@ -158,7 +170,7 @@ export const resources: Resource[] = [
     lang: 'en',
   },
   {
-    id: 14,
+    id: 15,
     track: 'ferramentas',
     source: 'Vercel Docs',
     title: 'Deploy com Next.js na Vercel',
