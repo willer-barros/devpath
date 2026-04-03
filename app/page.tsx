@@ -1,5 +1,7 @@
 import { RoadmapClient } from '../components/roadMapClient';
 import styles from '../css/page.module.css'
+import {resources} from "../types/resources"
+import { tracks } from '../types/resources';
 
 export default function Home() {
   return (
@@ -21,12 +23,13 @@ export default function Home() {
         {/* Stats */}
         <div className={styles.stats}>
           <div className={styles.stat}>
-            <span className={styles.statNumber}>14</span>
+            <span className={styles.statNumber}>{resources.length}</span>
             <span className={styles.statLabel}>recursos</span>
           </div>
           <div className={styles.statDivider} />
           <div className={styles.stat}>
-            <span className={styles.statNumber}>4</span>
+            {/* <span className={styles.statNumber}>4</span> */}
+            <span className={styles.statNumber}>{tracks.length}</span>
             <span className={styles.statLabel}>trilhas</span>
           </div>
           <div className={styles.statDivider} />
