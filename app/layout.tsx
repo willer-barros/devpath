@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'DevPath',
+  title: 'DevRoute',
   description:
     'Um roadmap cheio de recursos gratuitos para quem está começando a programar. Cursos, artigos e tutoriais organizados por trilha.',
   
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     icon: "/logo_devpath.png",
   },
   openGraph: {
-    title: 'DevPath',
+    title: 'DevRoute',
     description: 'Seu roadmap de estudos para programação — do zero ao deploy.',
     type: 'website',
     

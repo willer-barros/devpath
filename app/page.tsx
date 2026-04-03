@@ -12,7 +12,7 @@ export default function Home() {
           <div className={styles.logoRow}>
             <div className={styles.logoIcon}>&gt;_</div>
             <span className={styles.logoText}>
-              Dev<span className={styles.logoAccent}>Path</span>
+              Dev<span className={styles.logoAccent}>Route</span>
             </span>
           </div>
           <p className={styles.tagline}>
@@ -47,7 +47,7 @@ export default function Home() {
           <span className={styles.footerText}>
             feito com{' '}
             <span className={styles.footerAccent}>{'<3'}</span>
-            {' '}para devs iniciantes · contribua no{'https://github.com/willer-barros/devpath.git'}
+            {' '}para devs iniciantes · contribua no {'https://github.com/willer-barros/devpath.git'}
             <a
               href="https://github.com"
               target="_blank"
