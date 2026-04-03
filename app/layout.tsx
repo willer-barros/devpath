@@ -2,13 +2,18 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'DevPath — Roadmap de Estudos para Programadores',
+  title: 'DevPath',
   description:
-    'Um roadmap curado de recursos gratuitos para quem está começando a programar. Cursos, artigos e tutoriais organizados por trilha.',
+    'Um roadmap cheio de recursos gratuitos para quem está começando a programar. Cursos, artigos e tutoriais organizados por trilha.',
+  
+  icons: {
+    icon: "/logo_devpath.png",
+  },
   openGraph: {
     title: 'DevPath',
     description: 'Seu roadmap de estudos para programação — do zero ao deploy.',
     type: 'website',
+    
   },
 };
 

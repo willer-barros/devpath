@@ -44,7 +44,7 @@ export default function Home() {
           <span className={styles.footerText}>
             feito com{' '}
             <span className={styles.footerAccent}>{'<3'}</span>
-            {' '}para devs iniciantes · contribua no{' '}
+            {' '}para devs iniciantes · contribua no{'https://github.com/willer-barros/devpath.git'}
             <a
               href="https://github.com"
               target="_blank"
