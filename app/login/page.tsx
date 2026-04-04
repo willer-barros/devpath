@@ -1,6 +1,7 @@
 "use client"
 
 import styles from '../../css/login.module.css';
+import Link from 'next/link'
 
 export default function LoginPage() {
   return (
@@ -10,10 +11,10 @@ export default function LoginPage() {
           <div className={styles.logoRow}>
             <div className={styles.logoIcon}>&gt;</div>
             <h1 className={styles.logoText}>
-              DEV<span className={styles.logoAccent}>ROUTE</span>
+              Dev<span className={styles.logoAccent}>Route</span>
             </h1>
           </div>
-          <p className={styles.tagline}>Acesse sua conta para salvar seu progresso nos treinamentos.</p>
+          <p className={styles.tagline}>Acesse sua conta.</p>
         </header>
 
         <form className={styles.form}>
@@ -44,6 +45,7 @@ export default function LoginPage() {
           <p className={styles.footerText}>
             Novo por aqui? <span className={styles.logoAccent}>Crie sua conta gratuita</span>
           </p>
+          
         </footer>
       </div>
     </main>
