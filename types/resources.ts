@@ -99,6 +99,18 @@ export const resources: Resource[] = [
   },
   {
     id: 9,
+    track: 'web',
+    source: 'Lucas Souza Dec',
+    title: 'Curso Básico de react 2025',
+    desc: 'Curso introdutório de react com typescript',
+    link: 'https://www.youtube.com/watch?v=ggtWTKbhN_U&list=PL29TaWXah3iYzP5FGywXezXm4ZvBibGSk&index=1',
+    badge: 'free',
+    badgeLabel: 'Grátis',
+    level: 1,
+    lang: 'pt',
+  },
+  {
+    id: 10,
     track: 'backend',
     source: 'Cursa',
     title: 'Introdução ao Node.js',
@@ -110,7 +122,7 @@ export const resources: Resource[] = [
     lang: 'pt',
   },
   {
-    id: 10,
+    id: 11,
     track: 'backend',
     source: 'W3Schools',
     title: 'Plataforma Multidisciplinar',
@@ -122,7 +134,7 @@ export const resources: Resource[] = [
     lang: 'en',
   },
   {
-    id: 11,
+    id: 12,
     track: 'backend',
     source: 'PostgreSQL Docs',
     title: 'PostgreSQL Tutorial',
@@ -134,7 +146,7 @@ export const resources: Resource[] = [
     lang: 'en',
   },
   {
-    id: 12,
+    id: 13,
     track: 'backend',
     source: 'FullStackOpen',
     title: 'Full Stack Open — University of Helsinki',
@@ -146,7 +158,7 @@ export const resources: Resource[] = [
     lang: 'pt',
   },
   {
-    id: 13,
+    id: 14,
     track: 'ferramentas',
     source: 'Git SCM',
     title: 'Pro Git Book',
@@ -158,7 +170,7 @@ export const resources: Resource[] = [
     lang: 'pt',
   },
   {
-    id: 14,
+    id: 15,
     track: 'ferramentas',
     source: 'GitHub',
     title: 'GitHub Skills',
@@ -170,7 +182,7 @@ export const resources: Resource[] = [
     lang: 'en',
   },
   {
-    id: 15,
+    id: 16,
     track: 'ferramentas',
     source: 'Vercel Docs',
     title: 'Deploy com Next.js na Vercel',
@@ -180,6 +192,30 @@ export const resources: Resource[] = [
     badgeLabel: 'Grátis',
     level: 2,
     lang: 'en',
+  },
+  {
+    id: 17,
+    track: 'hard',
+    source: 'Akita on Rails',
+    title: 'Fabio Akita',
+    desc: 'Qualquer vídeo do canal é uma aula de programação.',
+    link: 'https://www.youtube.com/@Akitando',
+    badge: 'free',
+    badgeLabel: 'Grátis',
+    level: 3,
+    lang: 'pt',
+  },
+  {
+    id: 18,
+    track: 'hard',
+    source: 'Arquitetura e boas práticas',
+    title: 'Renato Augusto',
+    desc: 'Vídeos ricos em conteúdo de alto nível e gratuito.',
+    link: 'https://www.youtube.com/@RenatoAugustoTech',
+    badge: 'free',
+    badgeLabel: 'Grátis',
+    level: 3,
+    lang: 'pt',
   },
 ];
 
@@ -211,5 +247,12 @@ export const tracks: TrackMeta[] = [
     number: '04',
     color: 'track-green',
     accent: '#00D084',
+  },
+  {
+    id: 'hard',
+    label: 'Arquitetura e mais',
+    number: '05',
+    color: 'track-red',
+    accent: '#FF0000',    
   },
 ];

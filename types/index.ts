@@ -1,4 +1,4 @@
-export type Track = 'fundamentos' | 'web' | 'backend' | 'ferramentas';
+export type Track = 'fundamentos' | 'web' | 'backend' | 'ferramentas' | 'hard';
 export type Level = 1 | 2 | 3;
 export type Badge = 'free' | 'paid';
 export type Lang = 'pt' | 'en';
