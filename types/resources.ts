@@ -193,6 +193,17 @@ export const resources: Resource[] = [
     level: 2,
     lang: 'en',
   },
+
+    {
+    id: 16,
+    track: 'fundamentos',
+    source: 'Curso em Vídeo',
+    title: 'HTML5 e CSS3, Módulo 1/5',
+    desc: 'O primeiro módulo do melhor curso de front para iniciantes, pelo melhor professor do mundo.',
+    link: 'youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n&ab_channel=CursoemVídeo',
+    badge: 'free',
+    badgeLabel: 'Grátis',
+    level: 1,
   {
     id: 17,
     track: 'hard',
@@ -248,6 +259,7 @@ export const tracks: TrackMeta[] = [
     color: 'track-green',
     accent: '#00D084',
   },
+];
   {
     id: 'hard',
     label: 'Arquitetura e mais',
