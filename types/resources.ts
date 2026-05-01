@@ -193,9 +193,8 @@ export const resources: Resource[] = [
     level: 2,
     lang: 'en',
   },
-
-    {
-    id: 16,
+  {
+    id: 17,
     track: 'fundamentos',
     source: 'Curso em Vídeo',
     title: 'HTML5 e CSS3, Módulo 1/5',
@@ -204,8 +203,10 @@ export const resources: Resource[] = [
     badge: 'free',
     badgeLabel: 'Grátis',
     level: 1,
+    lang: 'pt',
+  },
   {
-    id: 17,
+    id: 18,
     track: 'hard',
     source: 'Akita on Rails',
     title: 'Fabio Akita',
@@ -217,7 +218,7 @@ export const resources: Resource[] = [
     lang: 'pt',
   },
   {
-    id: 18,
+    id: 19,
     track: 'hard',
     source: 'Arquitetura e boas práticas',
     title: 'Renato Augusto',
@@ -259,7 +260,7 @@ export const tracks: TrackMeta[] = [
     color: 'track-green',
     accent: '#00D084',
   },
-];
+
   {
     id: 'hard',
     label: 'Arquitetura e mais',
