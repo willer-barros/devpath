@@ -1,4 +1,4 @@
-export type Track = string; // agora dinâmico vindo do Supabase
+export type Track = string;
 export type Level = 1 | 2 | 3;
 export type Badge = 'free' | 'paid';
 export type Lang = 'pt' | 'en';
