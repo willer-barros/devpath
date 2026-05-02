@@ -1,5 +1,6 @@
 import { RoadmapClient } from '../components/roadMapClient';
 import { AuthHeader } from '../components/authHeader';
+import { GlossaryChat } from '../components/glossaryChat';
 import styles from '../css/page.module.css';
 
 const DiscordIcon = () => (
@@ -52,6 +53,7 @@ export default function Home() {
           </div>
         </footer>
       </div>
+      <GlossaryChat />
     </main>
   );
 }

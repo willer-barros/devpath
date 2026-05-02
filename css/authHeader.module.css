@@ -59,3 +59,38 @@
   border-color: var(--accent-orange);
   color: var(--accent-orange);
 }
+
+.btnGlossary {
+  background: none;
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+ 
+.btnGlossary:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+
+.btnOut{
+  background: none;
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+ 
+.btnOut:hover {
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+}

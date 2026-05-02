@@ -21,7 +21,16 @@ export function AuthHeader() {
   return (
     <div className={styles.wrap}>
       {isTeacher && (
-        <span className={styles.badge}>professor</span>
+        <>
+          <span className={styles.badge}>professor</span>
+          <button
+            className={styles.btnGlossary}
+            onClick={() => router.push('/manage-glossary')}
+            title="Gerenciar glossário"
+          >
+            glossário
+          </button>
+        </>
       )}
       <span className={styles.email}>{user.email}</span>
       <button className={styles.btnOut} onClick={signOut}>sair</button>
