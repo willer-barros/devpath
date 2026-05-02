@@ -1,4 +1,4 @@
-export type Track = 'fundamentos' | 'web' | 'backend' | 'ferramentas' | 'hard';
+export type Track = string; // agora dinâmico vindo do Supabase
 export type Level = 1 | 2 | 3;
 export type Badge = 'free' | 'paid';
 export type Lang = 'pt' | 'en';
@@ -8,18 +8,26 @@ export interface Resource {
   track: Track;
   source: string;
   title: string;
-  desc: string;
+  descricao: string;
   link: string;
   badge: Badge;
-  badgeLabel: string;
+  badge_label: string;
   level: Level;
   lang: Lang;
+  created_at?: string;
 }
 
 export interface TrackMeta {
-  id: Track;
+  id: string;
   label: string;
   number: string;
   color: string;
   accent: string;
+  created_at?: string;
+}
+
+export interface TeacherProfile {
+  id: string;
+  email: string;
+  created_at?: string;
 }
