@@ -26,12 +26,12 @@ export function ResourceCard({ resource, isDone, onToggle }: Props) {
       <div className={styles.header}>
         <span className={styles.source}>{resource.source}</span>
         <span className={`${styles.badge} ${styles[`badge--${resource.badge}`]}`}>
-          {resource.badgeLabel} · {resource.lang.toUpperCase()}
+          {resource.badge_label} · {resource.lang.toUpperCase()}
         </span>
       </div>
 
       <h3 className={styles.title}>{resource.title}</h3>
-      <p className={styles.desc}>{resource.desc}</p>
+      <p className={styles.desc}>{resource.descricao}</p>
 
       <div className={styles.footer}>
         <LevelDots level={resource.level} color={color} />
