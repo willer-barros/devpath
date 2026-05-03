@@ -6,6 +6,7 @@ import { supabase } from '../../lib/supabase';
 import { useAuth } from '../../contexts/AuthContext';
 import styles from '../../css/manageGlossary.module.css';
 
+
 interface GlossaryTerm {
   id: number;
   term: string;
@@ -23,6 +24,7 @@ export default function ManageGlossaryPage() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const  {user} = useAuth()
 
   useEffect(() => {
     if (!authLoading && !isTeacher) router.push('/login');
@@ -40,27 +42,42 @@ export default function ManageGlossaryPage() {
   useEffect(() => { fetchTerms(); }, []);
 
   const handleAdd = async () => {
-    setError('');
-    setSuccess('');
-    if (!newTerm.trim() || !newDef.trim()) {
-      setError('Preencha o termo e a definição.');
-      return;
-    }
-    setSaving(true);
-    const { error } = await supabase
-      .from('glossary')
-      .insert({ term: newTerm.trim(), definition: newDef.trim() });
+  setError('');
+  setSuccess('');
+  if (!newTerm.trim() || !newDef.trim()) {
+    setError('Preencha o termo e a definição.');
+    return;
+  }
+  setSaving(true);
 
-    if (error) {
-      setError('Erro ao salvar: ' + error.message);
-    } else {
-      setSuccess('Termo adicionado!');
-      setNewTerm('');
-      setNewDef('');
-      fetchTerms();
-    }
+  const { data, error } = await supabase
+    .from('glossary')
+    .insert({ term: newTerm.trim(), definition: newDef.trim() })
+    .select()
+    .single();
+
+  if (error) {
+    setError('Erro ao salvar: ' + error.message);
     setSaving(false);
-  };
+    return;
+  }
+
+  // Chama a Edge Function diretamente
+  await fetch('/api/notify', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+    },
+    body: JSON.stringify({ table: 'glossary', record: data, teacherEmail: user?.email }),
+  });
+
+  setSuccess('Termo adicionado!');
+  setNewTerm('');
+  setNewDef('');
+  fetchTerms();
+  setSaving(false);
+};
 
   const handleDelete = async (id: number) => {
     if (!confirm('Deletar este termo?')) return;

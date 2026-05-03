@@ -10,6 +10,7 @@ import styles from '../../css/addResource.module.css';
 export default function AddResourcePage() {
   const router = useRouter();
   const { isTeacher, loading: authLoading } = useAuth();
+  const {user} = useAuth();
 
   const [tracks, setTracks] = useState<TrackMeta[]>([]);
   const [newTrack, setNewTrack] = useState(false);
@@ -50,7 +51,6 @@ export default function AddResourcePage() {
     setError('');
     setSubmitting(true);
 
-    // Cria nova track se necessário
     if (newTrack) {
       if (!form.newTrackId || !form.newTrackLabel || !form.newTrackNumber) {
         setError('Preencha todos os campos da nova trilha.');
@@ -81,23 +81,37 @@ export default function AddResourcePage() {
       return;
     }
 
-    const { error: insertError } = await supabase.from('resources').insert({
-      track: trackId,
-      source: form.source,
-      title: form.title,
-      descricao: form.descricao,
-      link: form.link,
-      badge: form.badge,
-      badge_label: form.badge_label,
-      level: parseInt(form.level),
-      lang: form.lang,
-    });
+    const { data: resourceData, error: insertError } = await supabase
+      .from('resources')
+      .insert({
+        track: trackId,
+        source: form.source,
+        title: form.title,
+        descricao: form.descricao,
+        link: form.link,
+        badge: form.badge,
+        badge_label: form.badge_label,
+        level: parseInt(form.level),
+        lang: form.lang,
+      })
+      .select()
+      .single();
 
     if (insertError) {
       setError('Erro ao salvar recurso: ' + insertError.message);
       setSubmitting(false);
       return;
     }
+
+    // Notifica o professor via Edge Function
+    await fetch('/api/notify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify({ table: 'resources', record: resourceData, teacherEmail: user?.email }),
+    });
 
     setSuccess(true);
     setSubmitting(false);
@@ -116,7 +130,6 @@ export default function AddResourcePage() {
         </header>
 
         <div className={styles.form}>
-          {/* Trilha */}
           <div className={styles.group}>
             <label className={styles.label}>Trilha *</label>
             <div className={styles.row}>
@@ -164,31 +177,26 @@ export default function AddResourcePage() {
             </div>
           )}
 
-          {/* Source */}
           <div className={styles.group}>
             <label className={styles.label}>Fonte / Plataforma *</label>
             <input className={styles.input} placeholder="ex: freeCodeCamp, Harvard, Rocketseat" value={form.source} onChange={(e) => set('source', e.target.value)} />
           </div>
 
-          {/* Title */}
           <div className={styles.group}>
             <label className={styles.label}>Título *</label>
             <input className={styles.input} placeholder="Nome do curso ou recurso" value={form.title} onChange={(e) => set('title', e.target.value)} />
           </div>
 
-          {/* Descrição */}
           <div className={styles.group}>
             <label className={styles.label}>Descrição *</label>
             <textarea className={styles.textarea} placeholder="Descreva brevemente o que o aluno vai aprender..." value={form.descricao} onChange={(e) => set('descricao', e.target.value)} rows={3} />
           </div>
 
-          {/* Link */}
           <div className={styles.group}>
             <label className={styles.label}>Link *</label>
             <input className={styles.input} type="url" placeholder="https://..." value={form.link} onChange={(e) => set('link', e.target.value)} />
           </div>
 
-          {/* Badge + Label */}
           <div className={styles.row}>
             <div className={styles.group} style={{ flex: 1 }}>
               <label className={styles.label}>Tipo</label>
@@ -203,7 +211,6 @@ export default function AddResourcePage() {
             </div>
           </div>
 
-          {/* Level + Lang */}
           <div className={styles.row}>
             <div className={styles.group} style={{ flex: 1 }}>
               <label className={styles.label}>Nível</label>
