@@ -1,183 +1,110 @@
-# Supabase CLI
+# DevRoute 🚀
 
-[![Coverage Status](https://coveralls.io/repos/github/supabase/cli/badge.svg?branch=main)](https://coveralls.io/github/supabase/cli?branch=main) [![Bitbucket Pipelines](https://img.shields.io/bitbucket/pipelines/supabase-cli/setup-cli/master?style=flat-square&label=Bitbucket%20Canary)](https://bitbucket.org/supabase-cli/setup-cli/pipelines) [![Gitlab Pipeline Status](https://img.shields.io/gitlab/pipeline-status/sweatybridge%2Fsetup-cli?label=Gitlab%20Canary)
-](https://gitlab.com/sweatybridge/setup-cli/-/pipelines)
+> Seu roadmap de estudos para programação — do zero ao deploy.
 
-[Supabase](https://supabase.io) is an open source Firebase alternative. We're building the features of Firebase using enterprise-grade open source tools.
+O **DevRoute** é uma plataforma educacional criada por professores do SENAI para ajudar alunos iniciantes a encontrar o melhor caminho no mundo da programação. Reúne cursos, artigos e tutoriais gratuitos organizados por trilhas, com glossário interativo para tirar dúvidas básicas de terminologia.
 
-This repository contains all the functionality for Supabase CLI.
+---
 
-- [x] Running Supabase locally
-- [x] Managing database migrations
-- [x] Creating and deploying Supabase Functions
-- [x] Generating types directly from your database schema
-- [x] Making authenticated HTTP requests to [Management API](https://supabase.com/docs/reference/api/introduction)
+## 🎯 Sobre o projeto
 
-## Getting started
+O DevRoute nasceu da necessidade de centralizar recursos de qualidade para alunos que estão começando. Em vez de perder tempo procurando por onde começar, o aluno encontra tudo organizado por trilha, com indicação de nível e idioma.
 
-### Install the CLI
+**Funcionalidades:**
+- Recursos organizados em trilhas (Fundamentos, Web, Back-end, Ferramentas)
+- Filtro por trilha
+- Marcação de progresso salva no navegador
+- Glossário interativo para dúvidas básicas de terminologia
+- Painel exclusivo para professores adicionarem novos recursos e termos
+- Dark mode automático
+- Responsivo para mobile
 
-Available via [NPM](https://www.npmjs.com) as dev dependency. To install:
+---
 
-```bash
-npm i supabase --save-dev
-```
+## 👨‍🎓 Para alunos
 
-To install the beta release channel:
+### Como usar o roadmap
 
-```bash
-npm i supabase@beta --save-dev
-```
+1. **Acesse** [devroute.vercel.app](https://devroute.vercel.app)
+2. **Escolha sua trilha** — use os filtros no topo para navegar entre Fundamentos, Web, Back-end e Ferramentas
+3. **Siga a ordem** — os recursos estão organizados por nível (iniciante → avançado), representado pelos pontos em cada card
+4. **Marque seu progresso** — clique no botão `○` em cada card para marcar como concluído. Seu progresso fica salvo no navegador
+5. **Tire dúvidas** — clique no botão `?` verde no canto inferior direito para abrir o glossário e buscar termos que você não conhece
 
-When installing with yarn 4, you need to disable experimental fetch with the following nodejs config.
+### Dicas para aproveitar melhor
 
-```
-NODE_OPTIONS=--no-experimental-fetch yarn add supabase
-```
+- Não pule etapas — os fundamentos são a base de tudo
+- Os recursos marcados como `EN` estão em inglês. Se tiver dificuldade, use o Google Tradutor ou busque o conteúdo em português primeiro
+- Os pontos coloridos em cada card indicam o nível: 1 ponto = iniciante, 2 = intermediário, 3 = avançado
+- Se tiver dúvidas sobre algum termo técnico, use o glossário antes de pesquisar no Google
 
-> **Note**
-For Bun versions below v1.0.17, you must add `supabase` as a [trusted dependency](https://bun.sh/guides/install/trusted) before running `bun add -D supabase`.
+---
 
-<details>
-  <summary><b>macOS</b></summary>
+## 👨‍🏫 Para professores
 
-  Available via [Homebrew](https://brew.sh). To install:
+### Como criar sua conta
 
-  ```sh
-  brew install supabase/tap/supabase
-  ```
+O acesso de professor é restrito. Para criar uma conta você precisa de uma **chave secreta** fornecida pelo administrador.
 
-  To install the beta release channel:
-  
-  ```sh
-  brew install supabase/tap/supabase-beta
-  brew link --overwrite supabase-beta
-  ```
-  
-  To upgrade:
+Entre em contato pelo e-mail **willerbarros137@gmail.com** solicitando acesso. Informe seu nome e instituição de ensino. Após aprovação, você receberá a chave para criar sua conta.
 
-  ```sh
-  brew upgrade supabase
-  ```
-</details>
+### Como adicionar um novo recurso
 
-<details>
-  <summary><b>Windows</b></summary>
+1. Faça login com sua conta de professor
+2. Na página inicial, clique no botão `+` verde que aparece ao lado dos filtros
+3. Preencha o formulário com os dados do recurso:
+   - **Trilha** — selecione uma existente ou crie uma nova
+   - **Fonte** — nome da plataforma (ex: freeCodeCamp, Harvard, Rocketseat)
+   - **Título** — nome do curso ou recurso
+   - **Descrição** — explique brevemente o que o aluno vai aprender
+   - **Link** — URL direta para o recurso
+   - **Tipo** — Gratuito ou Pago
+   - **Nível** — 1 (iniciante), 2 (intermediário) ou 3 (avançado)
+   - **Idioma** — PT ou EN
+4. Clique em **Salvar recurso**
+5. O recurso aparece imediatamente na plataforma para todos os alunos
+6. Você receberá um e-mail de confirmação após salvar
 
-  Available via [Scoop](https://scoop.sh). To install:
+### Como gerenciar o glossário
 
-  ```powershell
-  scoop bucket add supabase https://github.com/supabase/scoop-bucket.git
-  scoop install supabase
-  ```
+1. Faça login com sua conta de professor
+2. Clique em **glossário** no menu superior direito
+3. Adicione novos termos preenchendo o termo e a definição em linguagem simples
+4. Os termos ficam disponíveis imediatamente para todos os alunos no botão `?`
 
-  To upgrade:
+### Boas práticas para descrições
 
-  ```powershell
-  scoop update supabase
-  ```
-</details>
+- Escreva como se estivesse explicando para um iniciante absoluto
+- Seja direto e objetivo — máximo 2 linhas
+- Mencione o que o aluno vai aprender ou construir ao concluir
 
-<details>
-  <summary><b>Linux</b></summary>
+---
 
-  Available via [Homebrew](https://brew.sh) and Linux packages.
+## 🛠️ Stack técnica
 
-  #### via Homebrew
+- **Frontend:** Next.js 15 + TypeScript
+- **Estilo:** CSS Modules
+- **Banco de dados:** Supabase (PostgreSQL)
+- **Autenticação:** Supabase Auth
+- **Email:** Resend
+- **Deploy:** Vercel
 
-  To install:
+---
 
-  ```sh
-  brew install supabase/tap/supabase
-  ```
+## 🤝 Contribuindo
 
-  To upgrade:
+Professores e Alunos podem contribuir diretamente pela plataforma. Para contribuições técnicas ao código, abra uma issue ou PR no repositório.
 
-  ```sh
-  brew upgrade supabase
-  ```
+---
 
-  #### via Linux packages
+## 📬 Contato
 
-  Linux packages are provided in [Releases](https://github.com/supabase/cli/releases). To install, download the `.apk`/`.deb`/`.rpm`/`.pkg.tar.zst` file depending on your package manager and run the respective commands.
+Dúvidas, sugestões ou solicitação de acesso de professor:
 
-  ```sh
-  sudo apk add --allow-untrusted <...>.apk
-  ```
+**willerbarros137@gmail.com**
 
-  ```sh
-  sudo dpkg -i <...>.deb
-  ```
+---
 
-  ```sh
-  sudo rpm -i <...>.rpm
-  ```
+## 📄 Licença
 
-  ```sh
-  sudo pacman -U <...>.pkg.tar.zst
-  ```
-</details>
-
-<details>
-  <summary><b>Other Platforms</b></summary>
-
-  You can also install the CLI via [go modules](https://go.dev/ref/mod#go-install) without the help of package managers.
-
-  ```sh
-  go install github.com/supabase/cli@latest
-  ```
-
-  Add a symlink to the binary in `$PATH` for easier access:
-
-  ```sh
-  ln -s "$(go env GOPATH)/bin/cli" /usr/bin/supabase
-  ```
-
-  This works on other non-standard Linux distros.
-</details>
-
-<details>
-  <summary><b>Community Maintained Packages</b></summary>
-
-  Available via [pkgx](https://pkgx.sh/). Package script [here](https://github.com/pkgxdev/pantry/blob/main/projects/supabase.com/cli/package.yml).
-  To install in your working directory:
-
-  ```bash
-  pkgx install supabase
-  ```
-
-  Available via [Nixpkgs](https://nixos.org/). Package script [here](https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/supabase-cli/default.nix).
-</details>
-
-### Run the CLI
-
-```bash
-supabase bootstrap
-```
-
-Or using npx:
-
-```bash
-npx supabase bootstrap
-```
-
-The bootstrap command will guide you through the process of setting up a Supabase project using one of the [starter](https://github.com/supabase-community/supabase-samples/blob/main/samples.json) templates.
-
-## Docs
-
-Command & config reference can be found [here](https://supabase.com/docs/reference/cli/about).
-
-## Breaking changes
-
-We follow semantic versioning for changes that directly impact CLI commands, flags, and configurations.
-
-However, due to dependencies on other service images, we cannot guarantee that schema migrations, seed.sql, and generated types will always work for the same CLI major version. If you need such guarantees, we encourage you to pin a specific version of CLI in package.json.
-
-## Developing
-
-To run from source:
-
-```sh
-# Go >= 1.22
-go run . help
-```
+MIT
